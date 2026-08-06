@@ -1,0 +1,73 @@
+aura & ESENCIA — Sitio web del catálogo
+========================================
+
+CONTENIDO DE LA CARPETA
+- index.html            → la página principal de la tienda.
+- admin.html             → panel de administración para editar el catálogo.
+- css/style.css          → estilos generales del sitio.
+- css/admin.css          → estilos del panel de administración.
+- js/catalog.js          → AQUÍ VIVEN TUS PRODUCTOS y tus datos de contacto.
+- js/main.js             → lógica de la tienda (no es necesario tocarlo).
+- js/admin.js            → lógica del panel de administración.
+- assets/logo.png        → tu logo, recortado con fondo transparente.
+- assets/products/       → fotos de los productos (por ahora son imágenes
+                            de muestra que debes reemplazar por fotos reales).
+
+CÓMO PUBLICAR EL SITIO
+Estos archivos funcionan en cualquier hosting de páginas estáticas (por
+ejemplo GitHub Pages, Netlify, Vercel, Hostinger, etc.). Solo debes subir
+toda la carpeta tal como está. No necesita base de datos ni servidor especial.
+
+CÓMO ACTUALIZAR EL CATÁLOGO (dos formas)
+
+1) Forma visual, sin tocar código (recomendada para el día a día):
+   - Abre admin.html en tu navegador (o el botón "Panel de administración"
+     al final de la página).
+   - Contraseña de acceso: auraesencia2026
+     (la puedes cambiar en js/admin.js, en la constante CLAVE_ADMIN)
+   - Agrega, edita o elimina productos con el formulario.
+   - Cuando termines, dale a "Descargar catalog.js actualizado" y sube ese
+     archivo a tu hosting, reemplazando js/catalog.js. Ese paso es
+     necesario para que los cambios se vean en TODOS los dispositivos y
+     no solo en tu navegador.
+
+2) Editando el código directamente (para quien se sienta cómoda con esto):
+   - Abre js/catalog.js con cualquier editor de texto.
+   - Copia y pega un bloque de producto existente, cambia los datos.
+   - Guarda el archivo y súbelo a tu hosting.
+
+CÓMO CAMBIAR WHATSAPP / INSTAGRAM / TIKTOK
+- Desde el panel de administración, sección "Datos de contacto".
+- O directamente en js/catalog.js, en el objeto CONTACTO al final del archivo.
+  El número de WhatsApp va con el código de país, sin "+" ni espacios
+  (ejemplo: para Colombia, 57 3001234567 → "573001234567").
+
+CÓMO REEMPLAZAR LAS FOTOS DE PRODUCTOS
+- Puedes subir la foto directamente desde el formulario del panel de
+  administración (queda guardada dentro del producto).
+- O guardar tus fotos en la carpeta assets/products/ y escribir esa ruta
+  en el campo "Imagen del producto" al crear/editar (ej:
+  assets/products/mi-foto-1.jpg).
+- Se recomienda que todas las fotos tengan una proporción similar
+  (por ejemplo 800x1000 px, formato retrato) para que la cuadrícula del
+  catálogo se vea pareja.
+
+SOBRE LAS TIPOGRAFÍAS
+Tu manual de marca indica dos tipografías: "Cormorant Medium" y
+"Modern Romance". Cormorant sí es una fuente gratuita de Google Fonts y
+se usa en todo el sitio para títulos y textos. "Modern Romance" es una
+fuente de uso personal/de pago (no está disponible para incrustar
+legalmente en una página web), por lo que para el texto con look
+manuscrito ("aura") se usó Cormorant en cursiva, que conserva el mismo
+espíritu romántico del logo. Si compras la licencia web de "Modern
+Romance", puedo ayudarte a incorporarla.
+
+SOBRE LOS COLORES
+Se usan únicamente los 10 colores de tu paleta:
+Cálidos:  #FFE8D6  #FFB79A  #FF8360  #E8543F  #9C2B1B
+Violetas: #E7DFF7  #C6B4EE  #A48AE0  #7B5FD1  #4E2FB0
+
+SOBRE EL LOGO
+Se recortó directamente de tu PDF de marca, conservando el diseño
+original, con el fondo hecho transparente para que se vea bien sobre
+cualquier color del sitio (assets/logo.png).

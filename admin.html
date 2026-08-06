@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panel de administración — aura & ESENCIA</title>
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+<header class="admin-header">
+  <a href="index.html" class="brand">
+    <img src="assets/logo.png" alt="Logo aura & ESENCIA" />
+    <span class="brand-word">aura <b>& ESENCIA</b></span>
+  </a>
+  <a class="btn btn-ghost" href="index.html">← Volver a la tienda</a>
+</header>
+
+<!-- ============ PANTALLA DE ACCESO ============ -->
+<section id="gateScreen" class="admin-gate">
+  <div class="gate-card">
+    <span class="eyebrow">Panel de administración</span>
+    <h1>Acceso privado</h1>
+    <p>Ingresa la contraseña para editar el catálogo. Puedes cambiarla en <code>js/admin.js</code> (constante <code>CLAVE_ADMIN</code>).</p>
+    <p class="gate-warning">
+      ⚠️ Esta es una protección simple pensada solo para evitar cambios accidentales,
+      no es una seguridad real: cualquier persona que vea el código fuente puede
+      encontrar la contraseña. No la uses para proteger información sensible.
+    </p>
+    <form id="gateForm">
+      <input type="password" id="gatePassword" placeholder="Contraseña" required />
+      <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+    <p id="gateError" class="gate-error"></p>
+  </div>
+</section>
+
+<!-- ============ PANEL PRINCIPAL ============ -->
+<main id="adminMain" class="admin-main hidden">
+  <div class="admin-container">
+
+    <div class="admin-intro">
+      <div>
+        <span class="eyebrow">Panel de administración</span>
+        <h1>Tu catálogo, siempre al día</h1>
+        <p>
+          Agrega, edita o elimina productos. Los cambios se guardan en este
+          navegador automáticamente. Cuando termines, descarga el archivo
+          actualizado y reemplázalo en tu sitio para que los cambios se vean
+          en todos los dispositivos.
+        </p>
+      </div>
+      <div class="admin-actions">
+        <button class="btn btn-primary" id="btnNuevo">+ Nuevo producto</button>
+        <button class="btn btn-ghost" id="btnDescargar">Descargar catalog.js actualizado</button>
+        <button class="btn btn-ghost" id="btnRestaurar">Restaurar catálogo original</button>
+      </div>
+    </div>
+
+    <div class="admin-help">
+      <strong>¿Cómo publico los cambios en internet?</strong>
+      Este panel guarda tus cambios solo en este navegador (localStorage), para
+      que puedas probar antes de publicar. Cuando estés conforme, dale a
+      "Descargar catalog.js actualizado" y sube ese archivo a tu hosting,
+      reemplazando el que está en la carpeta <code>js/catalog.js</code>. Así el
+      catálogo quedará actualizado para todas las personas que visiten tu
+      página, no solo en este navegador.
+    </div>
+
+    <div class="admin-section">
+      <h2>Datos de contacto</h2>
+      <form id="contactForm" class="admin-form contact-form">
+        <label>
+          Número de WhatsApp (con código de país, sin + ni espacios)
+          <input type="text" id="cWhatsapp" placeholder="573001234567" required />
+        </label>
+        <label>
+          Enlace de Instagram
+          <input type="url" id="cInstagram" placeholder="https://instagram.com/tuusuario" required />
+        </label>
+        <label>
+          Enlace de TikTok
+          <input type="url" id="cTiktok" placeholder="https://tiktok.com/@tuusuario" required />
+        </label>
+        <button class="btn btn-primary" type="submit">Guardar datos de contacto</button>
+        <span class="save-flag" id="contactSaved">Guardado ✓</span>
+      </form>
+    </div>
+
+    <div class="admin-section">
+      <h2>Productos (<span id="countProductos">0</span>)</h2>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="adminTable">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Tallas</th>
+              <th>Stock</th>
+              <th>Destacado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ MODAL DE PRODUCTO (crear / editar) ============ -->
+<div class="overlay-scrim" id="formScrim"></div>
+<aside class="admin-form-panel" id="formPanel">
+  <button class="panel-close" id="formCloseBtn" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24"><path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.71 2.88 18.3 9.17 12 2.88 5.71 4.3 4.29l6.29 6.3 6.29-6.3z"/></svg>
+  </button>
+  <div class="panel-body">
+    <h3 id="formTitle">Nuevo producto</h3>
+    <form id="productForm" class="admin-form">
+      <input type="hidden" id="fId" />
+
+      <label>Nombre del producto
+        <input type="text" id="fNombre" required />
+      </label>
+
+      <label>Categoría
+        <input type="text" id="fCategoria" placeholder="Ej: Conjuntos, Pijamas, Bralettes..." required />
+      </label>
+
+      <label>Precio (COP)
+        <input type="number" id="fPrecio" min="0" step="1000" required />
+      </label>
+
+      <label>Tallas disponibles (separadas por coma)
+        <input type="text" id="fTallas" placeholder="S, M, L, XL" required />
+      </label>
+
+      <label>Stock (unidades disponibles)
+        <input type="number" id="fStock" min="0" step="1" required />
+      </label>
+
+      <label>Descripción corta
+        <textarea id="fDescripcion" rows="3"></textarea>
+      </label>
+
+      <label>Imagen del producto
+        <input type="file" id="fImagenArchivo" accept="image/*" />
+        <span class="field-hint">Sube una foto o pega abajo la ruta de una imagen ya existente en <code>assets/products/</code>.</span>
+        <input type="text" id="fImagenRuta" placeholder="assets/products/mi-foto.jpg" />
+      </label>
+      <img id="fImagenPreview" class="form-preview" alt="Vista previa" />
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="fDestacado" />
+        Mostrar como producto destacado
+      </label>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary">Guardar producto</button>
+        <button type="button" class="btn btn-ghost" id="btnEliminar">Eliminar producto</button>
+      </div>
+    </form>
+  </div>
+</aside>
+
+<script src="js/catalog.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
