@@ -110,7 +110,7 @@ const CATALOGO = [
    y los enlaces de Instagram y TikTok.
    ========================================================================= */
 const CONTACTO = {
-  whatsapp: "573001234567", // ← reemplaza por tu número real
-  instagram: "https://instagram.com/aura.esencia", // ← reemplaza por tu usuario real
+  whatsapp: "573012323671", // ← reemplaza por tu número real
+  instagram: "https://www.instagram.com/aurayesencia_store/", // ← reemplaza por tu usuario real
   tiktok: "https://tiktok.com/@aura.esencia", // ← reemplaza por tu usuario real
 };
