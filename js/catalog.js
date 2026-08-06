@@ -33,7 +33,7 @@ const CATALOGO = [
   {
     id: "p001",
     nombre: "Conjunto de Encaje Aura",
-    categoria: "Conjuntos",
+    categoria: "Pijamas",
     precio: 129000,
     tallas: ["S", "M", "L"],
     stock: 8,
@@ -57,7 +57,7 @@ const CATALOGO = [
   {
     id: "p003",
     nombre: "Body Strapless Midnight",
-    categoria: "Bodies",
+    categoria: "Ropa interior",
     precio: 99000,
     tallas: ["S", "M"],
     stock: 0,
@@ -69,7 +69,7 @@ const CATALOGO = [
   {
     id: "p004",
     nombre: "Conjunto Algodón Suave",
-    categoria: "Conjuntos",
+    categoria: "Lencería",
     precio: 79000,
     tallas: ["S", "M", "L", "XL"],
     stock: 15,
@@ -81,7 +81,7 @@ const CATALOGO = [
   {
     id: "p005",
     nombre: "Bralette Triángulo Flor",
-    categoria: "Bralettes",
+    categoria: "Lencería",
     precio: 65000,
     tallas: ["Única"],
     stock: 3,
@@ -112,5 +112,5 @@ const CATALOGO = [
 const CONTACTO = {
   whatsapp: "573012323671", // ← reemplaza por tu número real
   instagram: "https://www.instagram.com/aurayesencia_store/", // ← reemplaza por tu usuario real
-  tiktok: "https://tiktok.com/@aura.esencia", // ← reemplaza por tu usuario real
+  tiktok: "https://www.tiktok.com/@aura.esencia.store?_r=1&_t=ZS-98eEShmdg05", // ← reemplaza por tu usuario real
 };
