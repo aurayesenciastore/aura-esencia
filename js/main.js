@@ -32,7 +32,7 @@
 
   function stockInfo(stock) {
     if (stock <= 0) return { clase: "out", texto: "Agotado" };
-    if (stock <= 4) return { clase: "low", texto: `Pocas unidades (${stock})` };
+    if (stock <= 2) return { clase: "low", texto: `Pocas unidades (${stock})` };
     return { clase: "in", texto: `Disponible (${stock})` };
   }
 
