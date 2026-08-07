@@ -39,7 +39,7 @@ const CATALOGO = [
     stock: 6,
     descripcion:
       "Elaborada en piel de durazno, cublimada de excelente calidad. Hermosos estampados full color que enamoran. Súper cómoda, fresca y perfecta para lucir divina en casa.",
-    imagen: "assets/products/short-xia.jpg",
+    imagen: "assets/products/short-xia.jpeg",
     destacado: true,
   },
   {
