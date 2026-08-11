@@ -36,7 +36,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 30000,
     tallas: ["TALLA ÚNICA"],
-    stock: 6,
+    stock: 5,
     descripcion:
       "Elaborada en piel de durazno, sublimada de excelente calidad. Hermosos estampados full color que enamoran. Súper cómoda, fresca y perfecta para lucir divina en casa.",
     imagen: "assets/products/short-xia.jpg",
@@ -50,8 +50,8 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 4,
     descripcion:
-      "Set de pijama en satén con caída fluida, blusa de tirantes y short a juego. Suave al tacto y fresca para dormir.",
-    imagen: "assets/products/pijama-saten.jpg",
+      "Conjunto coordinado de dos piezas que combina la comodidad de una camiseta de manga corta con un short ajustado de estilo fresco y juvenil.",
+    imagen: "assets/products/WhatsApp Image 2026-08-10 at 1.29.33 PM.jpg",
     destacado: true,
   },
   {
@@ -62,7 +62,7 @@ const CATALOGO = [
     tallas: ["M"],
     stock: 2,
     descripcion:
-      "Body strapless con varillas internas para mayor soporte, tela con leve brillo y acabado en encaje en el escote.",
+      "¡Dulce, fresca y súper coqueta! Conjunto de pijama corta de dos piezas tipo abotonada, diseñada con estampados divertidos que te harán lucir divina y sentirte ultra cómoda para un descanso perfecto.",
     imagen: "assets/products/body-strapless.jpg",
     destacado: true,
   },
@@ -74,7 +74,7 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 2,
     descripcion:
-      "Conjunto básico en algodón elastizado, perfecto para el día a día. Transpirable, cómodo y de uso prolongado.",
+      "nterizo de pijama femenino, fresco, cómodo y encantador. Su diseño ajustado y estampado divertido resaltan la silueta, mientras que su estilo juvenil lo hace perfecto para descansar con un toque coqueto y femenino.",
     imagen: "assets/products/conjunto-algodon.jpg",
     destacado: true,
   },
@@ -98,7 +98,7 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 2,
     descripcion:
-      "Set en seda sintética premium, camisa manga larga y pantalón recto. Elegancia total para las noches más especiales.",
+      "Un conjunto fresco y femenino, con estampados encantadores y un short cómodo que aporta libertad de movimiento. Perfecto para descansar sintiéndote linda y cómoda.",
     imagen: "assets/products/pijama-seda.jpg",
     destacado: true,
   },
@@ -110,7 +110,7 @@ const CATALOGO = [
     tallas: ["L", "XL"],
     stock: 2,
     descripcion:
-      "Set en seda sintética premium, camisa manga larga y pantalón recto. Elegancia total para las noches más especiales.",
+      "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
     imagen: "assets/products/pijama-seda.jpg",
     destacado: true,
   },
@@ -135,7 +135,7 @@ const CATALOGO = [
     stock: 6,
     descripcion:
       "Set en seda sintética premium, camisa manga larga y pantalón recto. Elegancia total para las noches más especiales.",
-    imagen: "assets/products/pijama-seda.jpg",
+    imagen: "assets/products/lenceria-laura.jpg",
     destacado: true,
   },
 ];
