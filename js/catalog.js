@@ -51,7 +51,7 @@ const CATALOGO = [
     stock: 4,
     descripcion:
       "Conjunto coordinado de dos piezas que combina la comodidad de una camiseta de manga corta con un short ajustado de estilo fresco y juvenil.",
-    imagen: "assets/products/WhatsApp Image 2026-08-10 at 1.29.33 PM.jpg",
+    imagen: "assets/products/short-danna.jpg",
     destacado: true,
   },
   {
@@ -63,7 +63,7 @@ const CATALOGO = [
     stock: 2,
     descripcion:
       "¡Dulce, fresca y súper coqueta! Conjunto de pijama corta de dos piezas tipo abotonada, diseñada con estampados divertidos que te harán lucir divina y sentirte ultra cómoda para un descanso perfecto.",
-    imagen: "assets/products/body-strapless.jpg",
+    imagen: "assets/products/short-renata.jpg",
     destacado: true,
   },
   {
@@ -75,7 +75,7 @@ const CATALOGO = [
     stock: 2,
     descripcion:
       "nterizo de pijama femenino, fresco, cómodo y encantador. Su diseño ajustado y estampado divertido resaltan la silueta, mientras que su estilo juvenil lo hace perfecto para descansar con un toque coqueto y femenino.",
-    imagen: "assets/products/conjunto-algodon.jpg",
+    imagen: "assets/products/enterizo-michelle.jpg",
     destacado: true,
   },
   {
@@ -87,7 +87,7 @@ const CATALOGO = [
     stock: 2,
     descripcion:
       "Bralette sin varillas con detalle floral bordado, tirantes ajustables y máxima comodidad sin sacrificar estilo.",
-    imagen: "assets/products/bralette-triangulo.jpg",
+    imagen: "assets/products/enterizo-zoe.jpg",
     destacado: true,
   },
   {
@@ -99,7 +99,7 @@ const CATALOGO = [
     stock: 2,
     descripcion:
       "Un conjunto fresco y femenino, con estampados encantadores y un short cómodo que aporta libertad de movimiento. Perfecto para descansar sintiéndote linda y cómoda.",
-    imagen: "assets/products/pijama-seda.jpg",
+    imagen: "assets/products/capri-milagros.jpg",
     destacado: true,
   },
   {
@@ -111,7 +111,7 @@ const CATALOGO = [
     stock: 2,
     descripcion:
       "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
-    imagen: "assets/products/pijama-seda.jpg",
+    imagen: "assets/products/pantalon-renata (2).jpg",
     destacado: true,
   },
   {
@@ -122,8 +122,8 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 4,
     descripcion:
-      "Set en seda sintética premium, camisa manga larga y pantalón recto. Elegancia total para las noches más especiales.",
-    imagen: "assets/products/pijama-seda.jpg",
+      "Conjunto sensual de dos piezas en encaje floral negro. Incluye bralette triangular con tiras decorativas en el escote y hilo con diseño de tiras múltiples en las caderas. Perfecto para un look audaz y moderno.",
+    imagen: "assets/products/lenceria-jazmin.jpg",
     destacado: true,
   },
   {
@@ -134,7 +134,7 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 6,
     descripcion:
-      "Set en seda sintética premium, camisa manga larga y pantalón recto. Elegancia total para las noches más especiales.",
+      "Conjunto romántico en encaje floral color rojo. Destaca por su top bralette de base ancha con escote en V y hilo a juego con detalles de lazos de satén. Combina comodidad, soporte y elegancia.",
     imagen: "assets/products/lenceria-laura.jpg",
     destacado: true,
   },
