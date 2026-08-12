@@ -59,7 +59,7 @@ const CATALOGO = [
     nombre: "Short RENATA",
     categoria: "Pijamas",
     precio: 60000,
-    tallas: ["M"],
+    tallas: ["S-M"],
     stock: 2,
     descripcion:
       "¡Dulce, fresca y súper coqueta! Conjunto de pijama corta de dos piezas tipo abotonada, diseñada con estampados divertidos que te harán lucir divina y sentirte ultra cómoda para un descanso perfecto.",
@@ -107,7 +107,7 @@ const CATALOGO = [
     nombre: "Pantalón RENATA",
     categoria: "Pijamas",
     precio: 68000,
-    tallas: ["L", "XL"],
+    tallas: ["L-XL"],
     stock: 2,
     descripcion:
       "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
@@ -122,7 +122,7 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 4,
     descripcion:
-      "Conjunto sensual de dos piezas en encaje floral negro. Incluye bralette triangular con tiras decorativas en el escote y hilo con diseño de tiras múltiples en las caderas. Perfecto para un look audaz y moderno.",
+      "Conjunto sensual de dos piezas en encaje floral. Incluye bralette triangular con tiras decorativas en el escote e hilo con diseño de tiras múltiples en las caderas. Perfecto para un look audaz y moderno.",
     imagen: "assets/products/lenceria-jazmin.jpg",
     destacado: true,
   },
@@ -134,7 +134,7 @@ const CATALOGO = [
     tallas: ["TALLA ÚNICA"],
     stock: 6,
     descripcion:
-      "Conjunto romántico en encaje floral color rojo. Destaca por su top bralette de base ancha con escote en V y hilo a juego con detalles de lazos de satén. Combina comodidad, soporte y elegancia.",
+      "Conjunto romántico en encaje floral. Destaca por su top bralette de base ancha con escote en V e hilo a juego con detalles de lazos de satén. Combina comodidad, soporte y elegancia.",
     imagen: "assets/products/lenceria-laura.jpg",
     destacado: true,
   },
