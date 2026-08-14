@@ -13,6 +13,27 @@
 </head>
 <body>
 
+<!-- Aviso emergente de bienvenida -->
+<div class="notice-scrim" id="noticeScrim">
+  <div class="notice-card" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+    <button class="notice-close" id="noticeCloseBtn" aria-label="Cerrar aviso">
+      <svg viewBox="0 0 24 24"><path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.71 2.88 18.3 9.17 12 2.88 5.71 4.3 4.29l6.29 6.3 6.29-6.3z"/></svg>
+    </button>
+    <img class="notice-logo" src="assets/logo.png" alt="aura & ESENCIA" />
+    <span class="eyebrow">Antes de ver el catálogo</span>
+    <h3 id="noticeTitle">Estas imágenes son de referencia</h3>
+    <p>
+      Las fotos que ves en la página muestran el estilo de cada prenda, pero
+      no representan todos los colores y diseños disponibles. Escríbenos por
+      WhatsApp y con gusto te mostramos el catálogo completo.
+    </p>
+    <div class="notice-actions">
+      <a class="btn btn-whatsapp" data-social="whatsapp" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <button class="btn btn-ghost" id="noticeDismissBtn">Entendido, seguir viendo</button>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container">
     <a href="#inicio" class="brand">
