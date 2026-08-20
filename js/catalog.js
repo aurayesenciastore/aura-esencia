@@ -36,7 +36,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 30000,
     tallas: ["TALLA ÚNICA"],
-    stock: 4,
+    stock: 5,
     descripcion:
       "Elaborada en piel de durazno, sublimada de excelente calidad. Hermosos estampados full color que enamoran. Súper cómoda, fresca y perfecta para lucir divina en casa.",
     imagen: "assets/products/short-xia.jpg",
@@ -48,7 +48,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 38000,
     tallas: ["TALLA ÚNICA"],
-    stock: 2,
+    stock: 4,
     descripcion:
       "Conjunto coordinado de dos piezas que combina la comodidad de una camiseta de manga corta con un short ajustado de estilo fresco y juvenil.",
     imagen: "assets/products/short-danna.jpg",
@@ -96,7 +96,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 40000,
     tallas: ["TALLA ÚNICA"],
-    stock: 1,
+    stock: 2,
     descripcion:
       "Un conjunto fresco y femenino, con estampados encantadores y un short cómodo que aporta libertad de movimiento. Perfecto para descansar sintiéndote linda y cómoda.",
     imagen: "assets/products/capri-milagros.jpg",
@@ -108,7 +108,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 68000,
     tallas: ["L-XL"],
-    stock: 1,
+    stock: 2,
     descripcion:
       "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
     imagen: "assets/products/pantalon-renata (2).jpg",
@@ -116,6 +116,42 @@ const CATALOGO = [
   },
   {
     id: "p008",
+    nombre: "Short AMOR",
+    categoria: "Pijamas",
+    precio: 38000,
+    tallas: ["M-L"],
+    stock: 2,
+    descripcion:
+      "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
+    imagen: "assets/products/short-amor.jpg",
+    destacado: true,
+  },
+  {
+    id: "p009",
+    nombre: "ZARA",
+    categoria: "Pijamas",
+    precio: 38000,
+    tallas: ["L"],
+    stock: 2,
+    descripcion:
+      "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
+    imagen: "assets/products/zara.jpg",
+    destacado: true,
+  },
+  {
+    id: "p0010",
+    nombre: "Pantalon ALISSON",
+    categoria: "Pijamas",
+    precio: 38000,
+    tallas: ["S-M","L-LX"],
+    stock: 2,
+    descripcion:
+      "Un conjunto delicado de dos piezas, con detalles encantadores y un diseño cómodo que combina suavidad, frescura y un toque muy femenino.",
+    imagen: "assets/products/pantalon-alisson.jpg",
+    destacado: true,
+  },
+  {
+    id: "p011",
     nombre: "JAZMIN",
     categoria: "Lencería",
     precio: 38000,
@@ -127,7 +163,7 @@ const CATALOGO = [
     destacado: true,
   },
   {
-    id: "p009",
+    id: "p012",
     nombre: "LAURA",
     categoria: "Lencería",
     precio: 40000,

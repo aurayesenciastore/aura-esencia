@@ -11,13 +11,6 @@
   const STORAGE_KEY = "auraesencia_catalogo";
   const CONTACT_KEY = "auraesencia_contacto";
 
-  // Cambia esto a "true" si quieres que el aviso emergente aparezca SIEMPRE
-  // que alguien abra la página (incluso si ya lo cerró antes en esa visita).
-  // Con "false", aparece una sola vez por sesión de navegación (se vuelve a
-  // mostrar si la persona cierra el navegador y vuelve otro día).
-  const MOSTRAR_AVISO_SIEMPRE = false;
-  const AVISO_SESSION_KEY = "auraesencia_aviso_visto";
-
   function getProductos() {
     const guardado = localStorage.getItem(STORAGE_KEY);
     if (guardado) {
@@ -176,36 +169,6 @@
   scrim.addEventListener("click", cerrarPanel);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarPanel(); });
 
-  /* ---------------------------- aviso emergente ---------------------------- */
-  const noticeScrim = document.getElementById("noticeScrim");
-  const noticeCloseBtn = document.getElementById("noticeCloseBtn");
-  const noticeDismissBtn = document.getElementById("noticeDismissBtn");
-
-  function cerrarAviso() {
-    noticeScrim.classList.remove("open");
-    document.body.style.overflow = "";
-    sessionStorage.setItem(AVISO_SESSION_KEY, "1");
-  }
-
-  function mostrarAvisoSiCorresponde() {
-    if (!noticeScrim) return;
-    const yaVisto = sessionStorage.getItem(AVISO_SESSION_KEY) === "1";
-    if (yaVisto && !MOSTRAR_AVISO_SIEMPRE) return;
-
-    setTimeout(() => {
-      noticeScrim.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }, 500);
-  }
-
-  if (noticeCloseBtn) noticeCloseBtn.addEventListener("click", cerrarAviso);
-  if (noticeDismissBtn) noticeDismissBtn.addEventListener("click", cerrarAviso);
-  if (noticeScrim) {
-    noticeScrim.addEventListener("click", (e) => {
-      if (e.target === noticeScrim) cerrarAviso();
-    });
-  }
-
   /* ------------------------------- menú móvil ------------------------------- */
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");
@@ -221,7 +184,6 @@
     renderFiltros();
     renderGrid();
     document.getElementById("year").textContent = new Date().getFullYear();
-    mostrarAvisoSiCorresponde();
   }
 
   document.addEventListener("DOMContentLoaded", init);
