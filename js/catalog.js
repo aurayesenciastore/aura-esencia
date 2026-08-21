@@ -120,7 +120,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 38000,
     tallas: ["M-L"],
-    stock: 2,
+    stock: "Por encargo",
     descripcion:
       "Añade un toque coqueto y súper cómodo a tus noches con este conjunto de dos piezas. Diseñado con llamativos estampados, que resaltan su estilo moderno y juvenil.",
     imagen: "assets/products/short-amor.jpg",
@@ -132,7 +132,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 38000,
     tallas: ["L"],
-    stock: 2,
+    stock: "Por encargo",
     descripcion:
       "Pijama corta con diseño estampado colorido, ideal para descansar con comodidad y estilo. Su diseño fresco y femenino la convierte en una opción perfecta para noches cómodas y relajadas.",
     imagen: "assets/products/zara.jpg",
@@ -144,7 +144,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 38000,
     tallas: ["S-M","L-LX"],
-    stock: 2,
+    stock: "Por encargo",
     descripcion:
       "Disfruta de tus momentos de descanso con la combinación perfecta entre estilo, frescura y máxima comodidad. Diseñada para brindarte un ajuste favorecedor y libertad de movimiento durante toda la noche o tus días de relax en casa.",
     imagen: "assets/products/pantalon-alisson.jpg",
