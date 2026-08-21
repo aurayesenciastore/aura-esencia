@@ -473,6 +473,58 @@ h1, h2, h3, h4 {
 .site-footer .social-icon { background: rgba(255,255,255,.14); color: var(--c1); }
 .site-footer .social-icon:hover { background: var(--c1); color: var(--c5); }
 
+/* =========================== AVISO EMERGENTE =========================== */
+.notice-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(78, 47, 176, .45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+.notice-scrim.open { opacity: 1; pointer-events: auto; }
+
+.notice-card {
+  position: relative;
+  background: var(--c1);
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 40px 34px 34px;
+  text-align: center;
+  box-shadow: 0 30px 60px -20px rgba(78, 47, 176, .55);
+  transform: translateY(14px) scale(.97);
+  transition: transform .3s cubic-bezier(.22,.9,.34,1);
+}
+.notice-scrim.open .notice-card { transform: translateY(0) scale(1); }
+
+.notice-logo { width: 64px; margin: 0 auto 14px; }
+
+.notice-card h3 { font-size: 1.6rem; margin-bottom: .35em; }
+.notice-card p { opacity: .85; font-size: 1rem; margin-bottom: 24px; }
+
+.notice-actions { display: flex; flex-direction: column; gap: 10px; }
+.notice-actions .btn { width: 100%; justify-content: center; }
+
+.notice-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 14px -6px rgba(78,47,176,.4);
+}
+.notice-close svg { width: 16px; height: 16px; fill: var(--v5); }
+
 /* =========================== WHATSAPP FLOAT =========================== */
 .wa-float {
   position: fixed;
