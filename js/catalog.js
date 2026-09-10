@@ -36,7 +36,7 @@ const CATALOGO = [
     categoria: "Pijamas",
     precio: 30000,
     tallas: ["TALLA ÚNICA"],
-    stock: 5,
+    stock: 3,
     descripcion:
       "Elaborada en piel de durazno, sublimada de excelente calidad. Hermosos estampados full color que enamoran. Súper cómoda, fresca y perfecta para lucir divina en casa.",
     imagen: "assets/products/short-xia.jpg",
@@ -152,26 +152,84 @@ const CATALOGO = [
   },
   {
     id: "p011",
-    nombre: "JAZMIN",
-    categoria: "Lencería",
-    precio: 38000,
-    tallas: ["TALLA ÚNICA"],
+    nombre: "Mantequilla Corporal Durazno - 180 g",
+    categoria: "Maquillaje",
+    precio: 15000,
     stock: 4,
     descripcion:
-      "Conjunto sensual de dos piezas en encaje floral. Incluye bralette triangular con tiras decorativas en el escote e hilo con diseño de tiras múltiples en las caderas. Perfecto para un look audaz y moderno.",
-    imagen: "assets/products/lenceria-jazmin.jpg",
+      "Una caricia cremosa para tu piel con textura tipo helado que se derrite suavemente sobre el cuerpo. Su fórmula ligera hidrata en profundidad y deja la piel suave, sedosa y con un delicado aroma a durazno mielado irresistible.",
+    imagen: "assets/products/mantequilla-durazno.jpg",
     destacado: true,
   },
   {
     id: "p012",
-    nombre: "LAURA",
-    categoria: "Lencería",
-    precio: 40000,
-    tallas: ["TALLA ÚNICA"],
-    stock: 6,
+    nombre: "Spray Shimmer Tornasol",
+    categoria: "Maquillaje",
+    precio: 14000,
+    stock: 4,
     descripcion:
-      "Conjunto romántico en encaje floral. Destaca por su top bralette de base ancha con escote en V e hilo a juego con detalles de lazos de satén. Combina comodidad, soporte y elegancia.",
-    imagen: "assets/products/lenceria-laura.jpg",
+      "Refresca tu piel y eleva tu mood al instante con este body splash con destellos. Perfuma suavemente y deja un glow sutil que realza tu piel bajo el sol o la luz.",
+    imagen: "assets/products/spray-brillo.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "p013",
+    nombre: "Crema de Manos OneSpring",
+    categoria: "Maquillaje",
+    precio: 2500,
+    stock: 50,
+    descripcion:
+      "Un kit completo para consentir tus manos con 5 fragancias frutales y florales irresistibles. Fórmula ligera de rápida absorción que hidrata intensamente sin dejar sensación grasosa, ideal para llevar siempre contigo.",
+    imagen: "assets/products/cremas-manos.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "p014",
+    nombre: "Kit Corporal Bioaqua Vainilla Ice Cream Exfoliante e Hidratante",
+    categoria: "Maquillaje",
+    precio: 30000,
+    stock: 2,
+    descripcion:
+      "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
+    imagen: "assets/products/kit-corporal.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "p015",
+    nombre: "Macarilla Piel Luminosa",
+    categoria: "Maquillaje",
+    precio: 5500,
+    stock: 12,
+    descripcion:
+      "Rutina de mascarillas para iluminar, calmar y revitalizar con fórmulas pensadas para distintas necesidades de tu piel.",
+    imagen: "assets/products/mascarillas-piel.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "p016",
+    nombre: "Sueros Aclarantes Bioaqua",
+    categoria: "Maquillaje",
+    precio: 7500,
+    stock: 12,
+    descripcion:
+      "Si buscas tratar manchas, acné y signos de edad al mismo tiempo, este set es una solución completa en sueros. Incluye 3 sueros concentrados que trabajan en conjunto para mejorar la textura, iluminar el tono y regenerar la piel.",
+    imagen: "assets/products/sueros-aclarantes.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "p017",
+    nombre: "Mascarillas Faciales Bioaqua",
+    categoria: "Maquillaje",
+    precio: 2000,
+    stock: 120,
+    descripcion:
+      "Estas mascarillas faciales incluyen diferentes activos como vitamina C, retinol y ácido hialurónico, ideales para hidratar, mejorar la textura de la piel y aportar luminosidad. Perfecto para una rutina constante de cuidado facial en casa.",
+    imagen: "assets/products/kit-mascarillas.jpg",
     destacado: true,
   },
 ];
