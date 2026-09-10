@@ -156,6 +156,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 15000,
     stock: 4,
+    tallas: [],
     descripcion:
       "Una caricia cremosa para tu piel con textura tipo helado que se derrite suavemente sobre el cuerpo. Su fórmula ligera hidrata en profundidad y deja la piel suave, sedosa y con un delicado aroma a durazno mielado irresistible.",
     imagen: "assets/products/mantequilla-durazno.jpg",
@@ -167,6 +168,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 14000,
     stock: 4,
+    tallas: [],
     descripcion:
       "Refresca tu piel y eleva tu mood al instante con este body splash con destellos. Perfuma suavemente y deja un glow sutil que realza tu piel bajo el sol o la luz.",
     imagen: "assets/products/spray-brillo.jpg",
@@ -179,6 +181,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 2500,
     stock: 50,
+    tallas: [],
     descripcion:
       "Un kit completo para consentir tus manos con 5 fragancias frutales y florales irresistibles. Fórmula ligera de rápida absorción que hidrata intensamente sin dejar sensación grasosa, ideal para llevar siempre contigo.",
     imagen: "assets/products/cremas-manos.jpg",
@@ -191,6 +194,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 30000,
     stock: 2,
+    tallas: [],
     descripcion:
       "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
     imagen: "assets/products/kit-corporal.jpg",
@@ -203,6 +207,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 5500,
     stock: 12,
+    tallas: [],
     descripcion:
       "Rutina de mascarillas para iluminar, calmar y revitalizar con fórmulas pensadas para distintas necesidades de tu piel.",
     imagen: "assets/products/mascarillas-piel.jpg",
@@ -215,6 +220,7 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 7500,
     stock: 12,
+    tallas: [],
     descripcion:
       "Si buscas tratar manchas, acné y signos de edad al mismo tiempo, este set es una solución completa en sueros. Incluye 3 sueros concentrados que trabajan en conjunto para mejorar la textura, iluminar el tono y regenerar la piel.",
     imagen: "assets/products/sueros-aclarantes.jpg",
@@ -227,9 +233,10 @@ const CATALOGO = [
     categoria: "Maquillaje",
     precio: 2000,
     stock: 120,
+    tallas: [],
     descripcion:
       "Estas mascarillas faciales incluyen diferentes activos como vitamina C, retinol y ácido hialurónico, ideales para hidratar, mejorar la textura de la piel y aportar luminosidad. Perfecto para una rutina constante de cuidado facial en casa.",
-    imagen: "assets/products/kit-mascarillas.jpg",
+    imagen: "assets/products/mascarillas.jpg",
     destacado: true,
   },
 ];

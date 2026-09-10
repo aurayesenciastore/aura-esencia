@@ -139,12 +139,16 @@
         <div class="panel-price">${money(p.precio)}</div>
         <p class="panel-desc">${p.descripcion || ""}</p>
 
-        <div class="panel-row">
-          <span class="label">Tallas</span>
-          <div class="size-list">
-            ${p.tallas.map((t) => `<span class="size-pill">${t}</span>`).join("")}
-          </div>
-        </div>
+        ${
+          p.tallas && p.tallas.length
+            ? `<div class="panel-row">
+                <span class="label">Tallas</span>
+                <div class="size-list">
+                  ${p.tallas.map((t) => `<span class="size-pill">${t}</span>`).join("")}
+                </div>
+              </div>`
+            : ""
+        }
         <div class="panel-row">
           <span class="label">Stock</span>
           <span class="stock-line ${info.clase}">${info.texto}</span>
