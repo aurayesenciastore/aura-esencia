@@ -465,7 +465,7 @@ const CATALOGO = [
   {
     id: "m001",
     nombre: "Mantequilla Corporal Durazno - 180 g",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 15000,
     stock: 4,
     tallas: [],
@@ -477,7 +477,7 @@ const CATALOGO = [
   {
     id: "m002",
     nombre: "Spray Shimmer Tornasol",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 14000,
     stock: 4,
     tallas: [],
@@ -490,7 +490,7 @@ const CATALOGO = [
   {
     id: "m003",
     nombre: "Crema de Manos OneSpring",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 2500,
     stock: 50,
     tallas: [],
@@ -503,7 +503,7 @@ const CATALOGO = [
   {
     id: "m004",
     nombre: "Kit Corporal Bioaqua Vainilla Ice Cream Exfoliante e Hidratante",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 30000,
     stock: 2,
     tallas: [],
@@ -516,7 +516,7 @@ const CATALOGO = [
   {
     id: "m005",
     nombre: "Mascarilla Piel Luminosa",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 5500,
     stock: 12,
     tallas: [],
@@ -529,7 +529,7 @@ const CATALOGO = [
   {
     id: "m006",
     nombre: "Suero Aclarante Bioaqua",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 7500,
     stock: 12,
     tallas: [],
@@ -542,7 +542,7 @@ const CATALOGO = [
   {
     id: "m007",
     nombre: "Mascarillas Faciales Bioaqua",
-    categoria: "Maquillaje",
+    categoria: "Skincare",
     precio: 2000,
     stock: 120,
     tallas: [],
