@@ -354,7 +354,8 @@ const CATALOGO = [
     imagen: "assets/products/Pantalón pretina-blusa tira.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p028",
     nombre: "Pantalón satín + blusa tiras",
     categoria: "Pijamas",
@@ -366,7 +367,8 @@ const CATALOGO = [
     imagen: "assets/products/Pantalón satín-blusa tiras.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p029",
     nombre: "Pantalón satín + blusa tiras",
     categoria: "Pijamas",
@@ -378,7 +380,8 @@ const CATALOGO = [
     imagen: "assets/products/Pantalón satín-blusa tirasG.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p030",
     nombre: "Batola manga",
     categoria: "Pijamas",
@@ -390,7 +393,8 @@ const CATALOGO = [
     imagen: "assets/products/batola-manga.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p031",
     nombre: "Batola tira",
     categoria: "Pijamas",
@@ -402,7 +406,8 @@ const CATALOGO = [
     imagen: "assets/products/batola-tira.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p032",
     nombre: "Batola Sisa",
     categoria: "Pijamas",
@@ -414,7 +419,8 @@ const CATALOGO = [
     imagen: "assets/products/batola-sisa.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p033",
     nombre: "Batola Satín",
     categoria: "Pijamas",
@@ -426,7 +432,8 @@ const CATALOGO = [
     imagen: "assets/products/batola-satin.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p034",
     nombre: "Enterizo Push",
     categoria: "Pijamas",
@@ -438,7 +445,8 @@ const CATALOGO = [
     imagen: "assets/products/Enterizo-Push.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "p035",
     nombre: "Pantalón + camisa niños y niñas",
     categoria: "Pijamas",
@@ -450,8 +458,9 @@ const CATALOGO = [
     imagen: "assets/products/pantalon-niño.jpg",
     destacado: true,
   },
-  {
-    id: "p035",
+
+{
+    id: "p036",
     nombre: "Short + camisa niños y niñas",
     categoria: "Pijamas",
     precio: 28000,
@@ -462,20 +471,217 @@ const CATALOGO = [
     imagen: "assets/products/short-niño.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "m001",
     nombre: "Mantequilla Corporal Durazno - 180 g",
     categoria: "Skincare",
     precio: 15000,
-    stock: 4,
+    stock: 0,
     tallas: [],
     descripcion:
       "Una caricia cremosa para tu piel con textura tipo helado que se derrite suavemente sobre el cuerpo. Su fórmula ligera hidrata en profundidad y deja la piel suave, sedosa y con un delicado aroma a durazno mielado irresistible.",
     imagen: "assets/products/mantequilla-durazno.jpg",
     destacado: true,
   },
-  {
+
+{
     id: "m002",
+    nombre: "Mantequilla Corporal Vainilla - 200 g",
+    categoria: "Skincare",
+    precio: 15000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Esta mantequilla corporal con fragancia de vainilla ayuda a nutrir profundamente la piel, dejándola suave, hidratada y con una sensación sedosa. Su textura rica es ideal para pieles secas o zonas que necesitan mayor hidratación.",
+    imagen: "assets/products/mantequilla-vainilla.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m003",
+    nombre: "Kit Corporal Bioaqua Vainilla Ice Cream Exfoliante e Hidratante",
+    categoria: "Skincare",
+    precio: 30000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
+    imagen: "assets/products/kit-corporal.jpg",
+    destacado: true,
+  },
+
+{
+  id: "m004",
+    nombre: "Sales de baño Bioaqua Strawberry Cake Exfoliantes y Suavizantes",
+    categoria: "Skincare",
+    precio: 18000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
+    imagen: "assets/products/sales-baño-fresa.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m005",
+    nombre: "Gel de Ducha Hidratante Luminoso Fabolai",
+    categoria: "Skincare",
+    precio: 18000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Este gel con glitter combina fragancia suave y fresca con partículas iluminadoras que dejan la piel con un brillo delicado y elegante. Su textura ligera se absorbe fácilmente, aportando luminosidad sin sensación pegajosa. Ideal para usar en el cuerpo, brazos, escote y piernas logrando un efecto glow instantáneo perfecto para el día o la noche",
+    imagen: "assets/products/gel-ducha.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m006",
+    nombre: "Jabon de rosas con Acido Hialuronico Bioaqua",
+    categoria: "Skincare",
+    precio: 11000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Limpieza profunda que suaviza e ilumina. Jabón facial con extracto de rosas, ácido hialurónico y AHA para renovar la textura, retirar impurezas y dejar la piel fresca y radiante",
+    imagen: "assets/products/jabon-rosas.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m007",
+    nombre: "Espuma Limpiadora Centella Asiática",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "La Espuma Limpiadora Facial Centella Asiática Bioaqua limpia suavemente la piel mientras ayuda a eliminar impurezas, exceso de grasa y residuos de maquillaje. Su fórmula enriquecida con centella asiática aporta una sensación de frescura, hidratación y confort, dejando el rostro limpio, suave y con una apariencia saludable sin sensación de resequedad.",
+    imagen: "assets/products/espuma-centella.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m008",
+    nombre: "Jabón Facial con Aminoácidos",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Fórmula espumosa con aminoácidos diseñada para limpiar a profundidad pieles grasas sin resecar. El aplicador con cepillo ayuda a retirar células muertas y suciedad para una piel más suave y luminosa..",
+    imagen: "assets/products/jabon-aminoacidos.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m009",
+    nombre: "Caja de Mascarillas Faciales Bioaqua x30",
+    categoria: "Skincare",
+    precio: 50000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Estas mascarillas faciales incluyen diferentes activos como vitamina C, retinol y ácido hialurónico, ideales para hidratar, mejorar la textura de la piel y aportar luminosidad. Perfecto para una rutina constante de cuidado facial en casa.",
+    imagen: "assets/products/kit-mascarillas.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m010",
+    nombre: "Mascarillas Faciales Bioaqua",
+    categoria: "Skincare",
+    precio: 2000,
+    stock: 24,
+    tallas: [],
+    descripcion:
+      "Estas mascarillas faciales incluyen diferentes activos como vitamina C, retinol y ácido hialurónico, ideales para hidratar, mejorar la textura de la piel y aportar luminosidad. Perfecto para una rutina constante de cuidado facial en casa.",
+    imagen: "assets/products/mascarillas.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m011",
+    nombre: "Kit de Mascarillas Piel Luminosa x3",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Rutina de mascarillas para iluminar, calmar y revitalizar con fórmulas pensadas para distintas necesidades de tu piel.",
+    imagen: "assets/products/mascarillas-piel.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m012",
+    nombre: "Mascarilla Piel Luminosa",
+    categoria: "Skincare",
+    precio: 5500,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Rutina de mascarillas para iluminar, calmar y revitalizar con fórmulas pensadas para distintas necesidades de tu piel.",
+    imagen: "assets/products/mascarillas-individual.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m013",
+    nombre: "Kit de Sueros Aclarantes Bioaqua x3",
+    categoria: "Skincare",
+    precio: 22000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Si buscas tratar manchas, acné y signos de edad al mismo tiempo, este set es una solución completa en sueros. Incluye 3 sueros concentrados que trabajan en conjunto para mejorar la textura, iluminar el tono y regenerar la piel.",
+    imagen: "assets/products/sueros-aclarantes.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m014",
+    nombre: "Suero Aclarante Bioaqua",
+    categoria: "Skincare",
+    precio: 7500,
+    stock: 3,
+    tallas: [],
+    descripcion:
+      "Si buscas tratar manchas, acné y signos de edad al mismo tiempo, este set es una solución completa en sueros. Ideal para: piel con manchas, piel con marcas, piel con acné, piel opaca.",
+    imagen: "assets/products/sueros-unidad.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m015",
+    nombre: "Parches Antiacné Invisibles Sadoer (36 und)",
+    categoria: "Skincare",
+    precio: 12000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Solución rápida, discreta y efectiva para granitos inesperados. Estos parches ayudan a absorber impurezas, proteger el brote y mejorar visiblemente su apariencia sin resecar la piel. Su diseño ultra delgado se adapta perfectamente al rostro y puedes usarlos incluso durante el día.",
+    imagen: "assets/products/parches-acne.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m016",
+    nombre: "Parches para Puntos Negros Disunie",
+    categoria: "Skincare",
+    precio: 1200,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Elimina eficazmente los puntos negros, exceso de grasa y suciedad acumulada en la nariz. Su fórmula con carbón de bambú y alfa-arbutina limpia en profundidad, ayuda a reducir los poros y deja la piel suave y luminosa.",
+    imagen: "assets/products/parches-puntos-negros.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m017",
     nombre: "Spray Shimmer Tornasol",
     categoria: "Skincare",
     precio: 14000,
@@ -488,7 +694,7 @@ const CATALOGO = [
   },
 
   {
-    id: "m003",
+    id: "m018",
     nombre: "Crema de Manos OneSpring",
     categoria: "Skincare",
     precio: 2500,
@@ -500,57 +706,59 @@ const CATALOGO = [
     destacado: true,
   },
 
-  {
-    id: "m004",
-    nombre: "Kit Corporal Bioaqua Vainilla Ice Cream Exfoliante e Hidratante",
+{
+    id: "m019",
+    nombre: "Labios Glossy con Efecto Brillo + Lavero Diseño Osito",
     categoria: "Skincare",
-    precio: 30000,
+    precio: 15000,
     stock: 2,
     tallas: [],
     descripcion:
-      "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
-    imagen: "assets/products/kit-corporal.jpg",
+      "Un gloss que resalta tus labios mientras se convierte en un accesorio llamativo y único. Aporta un acabado brillante que hace que los labios se vean más hidratados, suaves y luminosos desde la primera aplicación. Su diseño en forma de osito con llavero lo convierte en un producto práctico, ideal para llevar contigo o regalar.",
+    imagen: "assets/products/labial-glossy-osito.jpg",
+    destacado: true,
+  },
+  
+{
+    id: "m020",
+    nombre: "Labios Glossy + Efecto Volumen en Segundos (Brillo Kiss Glow con Llavero)",
+    categoria: "Skincare",
+    precio: 15000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Brillo que transforma el aspecto de tus labios al instante, haciéndolos ver más voluminosos, hidratados y luminosos. Su acabado ultra brillante crea un efecto jugoso que mejora visualmente la forma de los labios desde la primera aplicación. Incluye un diseño con llavero funcional que te permite llevarlo contigo y reaplicar fácilmente durante el día.",
+    imagen: "assets/products/labial-glossy.jpg",
+    destacado: true,
+  },
+
+{
+    id: "m021",
+    nombre: "Stick Antifrizz Control Cabello",
+    categoria: "Skincare",
+    precio: 18000,
+    stock: 3,
+    tallas: [],
+    descripcion:
+      "Controla el frizz y fija peinados con acabado suave y natural. Este hair wax stick está diseñado para domar baby hairs, controlar el frizz y mantener peinados pulidos sin dejar el cabello rígido. Su formato en barra permite una aplicación rápida y precisa. Ideal para coletas, moños, trenzas o para mantener el cabello en su lugar durante todo el día con un acabado natural y sin sensación pegajosa.",
+    imagen: "assets/products/stick-antifrizz.jpg",
     destacado: true,
   },
 
   {
-    id: "m005",
-    nombre: "Mascarilla Piel Luminosa",
+    id: "m022",
+    nombre: "Kit Crecimiento Shampoo (200ml) + Hair Oiling Jengibre (30 gr)",
     categoria: "Skincare",
-    precio: 5500,
-    stock: 12,
+    precio: 40000,
+    stock: 1,
     tallas: [],
     descripcion:
-      "Rutina de mascarillas para iluminar, calmar y revitalizar con fórmulas pensadas para distintas necesidades de tu piel.",
-    imagen: "assets/products/mascarillas-piel.jpg",
+      "Limpieza y nutrición revitalizante para un cabello con aspecto más fuerte, brillante y con sensación de mayor densidad. El jengibre ayuda a estimular el cuero cabelludo. Cabello con aspecto más fuerte y menos quiebre. Equilibra el cuero cabelludo. Aporta brillo y suavidad. Este dúo es ideal para: Cabello con caída o debilitado  (ayuda a fortalecer desde la raíz.). Cabello fino  (aporta sensación de mayor volumen.). Cabello graso o mixto: (equilibra el cuero cabelludo.). Cabello seco (nutre y mejora la textura.)",
+    imagen: "assets/products/kit-crecimiento-capilar.jpg",
     destacado: true,
   },
 
-  {
-    id: "m006",
-    nombre: "Suero Aclarante Bioaqua",
-    categoria: "Skincare",
-    precio: 7500,
-    stock: 12,
-    tallas: [],
-    descripcion:
-      "Si buscas tratar manchas, acné y signos de edad al mismo tiempo, este set es una solución completa en sueros. Incluye 3 sueros concentrados que trabajan en conjunto para mejorar la textura, iluminar el tono y regenerar la piel.",
-    imagen: "assets/products/sueros-aclarantes.jpg",
-    destacado: true,
-  },
-
-  {
-    id: "m007",
-    nombre: "Mascarillas Faciales Bioaqua",
-    categoria: "Skincare",
-    precio: 2000,
-    stock: 120,
-    tallas: [],
-    descripcion:
-      "Estas mascarillas faciales incluyen diferentes activos como vitamina C, retinol y ácido hialurónico, ideales para hidratar, mejorar la textura de la piel y aportar luminosidad. Perfecto para una rutina constante de cuidado facial en casa.",
-    imagen: "assets/products/mascarillas.jpg",
-    destacado: true,
-  },
+  
 ];
 
 /* =========================================================================
