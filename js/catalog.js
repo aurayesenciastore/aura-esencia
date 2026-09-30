@@ -503,7 +503,7 @@ const CATALOGO = [
     nombre: "Kit Corporal Bioaqua Vainilla Ice Cream Exfoliante e Hidratante",
     categoria: "Skincare",
     precio: 30000,
-    stock: "Agotado",
+    stock: 0,
     tallas: [],
     descripcion:
       "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
@@ -516,7 +516,7 @@ const CATALOGO = [
     nombre: "Sales de baño Bioaqua Strawberry Cake Exfoliantes y Suavizantes",
     categoria: "Skincare",
     precio: 18000,
-    stock: "Agotado",
+    stock: 0,
     tallas: [],
     descripcion:
       "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
