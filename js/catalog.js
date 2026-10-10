@@ -516,7 +516,7 @@ const CATALOGO = [
     nombre: "Sales de baño Bioaqua Strawberry Cake Exfoliantes y Suavizantes",
     categoria: "Skincare",
     precio: 18000,
-    stock: 0,
+    stock: 3,
     tallas: [],
     descripcion:
       "Este kit corporal combina sales exfoliantes y mantequilla corporal para limpiar, suavizar y nutrir la piel. Ideal para mejorar la textura, eliminar células muertas y dejar la piel hidratada con una fragancia tipo postre irresistible.",
@@ -724,7 +724,7 @@ const CATALOGO = [
     nombre: "Labios Glossy + Efecto Volumen en Segundos (Brillo Kiss Glow con Llavero)",
     categoria: "Skincare",
     precio: 15000,
-    stock: 1,
+    stock: 2,
     tallas: [],
     descripcion:
       "Brillo que transforma el aspecto de tus labios al instante, haciéndolos ver más voluminosos, hidratados y luminosos. Su acabado ultra brillante crea un efecto jugoso que mejora visualmente la forma de los labios desde la primera aplicación. Incluye un diseño con llavero funcional que te permite llevarlo contigo y reaplicar fácilmente durante el día.",
@@ -757,6 +757,306 @@ const CATALOGO = [
     imagen: "assets/products/kit-crecimiento-capilar.jpg",
     destacado: true,
   },
+
+  {
+    id: "m023",
+    nombre: "Potector Solar Doble Efecto",
+    categoria: "Skincare",
+    precio: 26000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "¡Luce una piel radiante y protegida! -  Descubre Haolika Sunscreen SPF 50+, tu aliado para proteger tu piel del sol, ayudar a unificar el tono y revelar una apariencia más luminosa. Su textura ligera y no grasa deja tu piel suave, fresca y radiante todos los días.",
+    imagen: "assets/products/protector-solar.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m024",
+    nombre: "Gel de Baño Hidratante y Exfoliante",
+    categoria: "Skincare",
+    precio: 25000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Gel de Ducha Exfoliante FABOL’AI – 1000 ml - Convierte tu baño en un ritual de spa. Exfolia suavemente, limpia e hidrata tu piel, dejándola suave, fresca y radiante con una fragancia irresistible.",
+    imagen: "assets/products/hidratante-exfoliante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m025",
+    nombre: "Bálsamo Labial con Propóleo SADOER",
+    categoria: "Skincare",
+    precio: 11000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Bálsamo labial con propóleo SADOER que ofrece nutrición intensa y reparación para labios secos o agrietados. Hidrata profundamente, aporta suavidad inmediata y protege contra la deshidratación para lucir unos labios más saludables día a día.",
+    imagen: "assets/products/balsamo-labial.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m026",
+    nombre: "Bálsamo de Miel Restaurador de Labios",
+    categoria: "Skincare",
+    precio: 13000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Hidratación profunda y duradera para rostro y cuerpo. Con tallow batido y miel, este bálsamo transforma las zonas secas o agrietadas aportando suavidad inmediata con una textura ligera de rápida absorción.",
+    imagen: "assets/products/balsamo-miel.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m027",
+    nombre: "Tónico Rosas + Ácido hialurónico Bioaqua tonifica e hidrata",
+    categoria: "Skincare",
+    precio: 14000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Tónico hidratante con ácido hialurónico y extracto de rosa que tonifica, suaviza y deja la piel fresca y luminosa. Gracias a sus propiedades antioxidantes y antiarrugas, ayuda a minimizar poros, mejorar la elasticidad y proteger tu piel contra el daño externo.",
+    imagen: "assets/products/tonico-rosa.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m028",
+    nombre: "Tónico Facial Niacinamida + Sandía 40% Hidratación & Luminosidad – Sadoer (120 ml)",
+    categoria: "Skincare",
+    precio: 17000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Tónico facial ligero y refrescante formulado con 40% de extracto de sandía y niacinamida para hidratar, calmar y equilibrar la piel. De rápida absorción, ayuda a unificar el tono, minimizar la apariencia de poros y potenciar el brillo natural de tu rostro.",
+    imagen: "assets/products/tonico-facial.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m029",
+    nombre: "Crema Hidratante de Vitamina C",
+    categoria: "Skincare",
+    precio: 12000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Crema facial con vitamina C que ilumina, combate la oxidación y ayuda a prevenir el envejecimiento prematuro. Activa la síntesis de colágeno para mejorar la firmeza, reduce líneas de expresión y atenúa manchas, dejando la piel más lisa, uniforme y reluciente.",
+    imagen: "assets/products/crema-vitamina.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m030",
+    nombre: "Crema Hidratante V7 multi beneficios nutre y revitaliza",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Crema iluminadora de textura ligera y no grasa que brinda un efecto tone-up instantáneo para un rostro uniforme y radiante. Enriquecida con ácido hialurónico, disimula manchas, rojeces e imperfecciones mientras hidrata profundamente y ofrece un sutil efecto lifting.",
+    imagen: "assets/products/crema-hidratante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m031",
+    nombre: "Aceite Desmaquillante Jojoba Remueve Maquillaje Waterproof – Sadoer",
+    categoria: "Skincare",
+    precio: 19000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Aceite desmaquillante con jojoba que disuelve eficazmente el maquillaje (incluso waterproof) y el protector solar sin resecar la piel. De textura ligera y fácil enjuague, brinda una limpieza suave que deja el rostro limpio, hidratado, suave y luminoso.",
+    imagen: "assets/products/aceite-desmaquillante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m032",
+    nombre: "Bálsamo Desmaquillante con Pomelo – Limpieza Profunda y Suavidad | Sadoer",
+    categoria: "Skincare",
+    precio: 19000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Bálsamo desmaquillante en crema con extracto de pomelo que derrite suavemente todo tipo de maquillaje, incluso el resistente al agua. Limpia la piel a profundidad sin resecarla ni dejar sensación grasosa, aportándole suavidad, frescura y vitalidad.",
+    imagen: "assets/products/balsamo-desmaquillante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m033",
+    nombre: "Pañitos Húmedos Desmaquillantes",
+    categoria: "Skincare",
+    precio: 10000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Toallitas desmaquillantes pre-humedecidas con Aloe Vera y Vitamina E para una limpieza rápida, suave y efectiva. Eliminan el maquillaje e impurezas (incluso fórmulas a prueba de agua) mientras calman e hidratan la piel sin irritar ni resecar.",
+    imagen: "assets/products/pañitos-aloe.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m034",
+    nombre: "Limpiador Facial VEZE Volcanic Mud Purificante y Control de Grasa",
+    categoria: "Skincare",
+    precio: 15000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Limpiador facial con barro volcánico diseñado para limpiar profundamente los poros y controlar el exceso de grasa sin resecar la piel. Elimina impurezas, ayuda a reducir la apariencia de poros y deja el rostro fresco, limpio y revitalizado.",
+    imagen: "assets/products/limpiador-facial.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m035",
+    nombre: "Jabón Facial Vitamina C Bioaqua",
+    categoria: "Skincare",
+    precio: 12000,
+    stock: 2,
+    tallas: [],
+    descripcion:
+      "Jabón facial cremoso y suave enriquecido con Vitamina C que elimina impurezas y exceso de grasa sin resecar la piel. Su poder antioxidante combate el estrés oxidativo, estimula la producción de colágeno y retrasa signos de envejecimiento, dejando la piel firme, luminosa, uniforme y joven.",
+    imagen: "assets/products/jabon-vitaminac.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m036",
+    nombre: "Pomos Desmaquillantes x 222 Pcs",
+    categoria: "Skincare",
+    precio: 14000,
+    stock: 3,
+    tallas: [],
+    descripcion:
+      "Pomos desmaquillantes de algodón 100% puro, ultra suaves, resistentes y delicados con la piel. Ideales para retirar maquillaje, aplicar tónicos o esencias y limpiar impurezas sin deshacerse ni soltar pelusa, incluso al estar húmedos.",
+    imagen: "assets/products/pomos-desmaquillante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m037",
+    nombre: "Crema Facial Detox Sal Rosada + Centella 18% Reafirmante & Poros – Sadoer",
+    categoria: "Skincare",
+    precio: 15000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Crema ligera detox formulada con sal rosada del Himalaya y 18% de centella asiática que nutre en profundidad y reafirma el rostro. Ayuda a minimizar los poros dilatados, mejorar la elasticidad y revitalizar la piel para un acabado suave, firme y luminoso.",
+    imagen: "assets/products/crema-reafirmante.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m038",
+    nombre: "Protector Solar Gel Cream Disaar – protege la piel del sol",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Protector solar hidratante SPF50 PA+++ que ofrece alta protección contra rayos UVA, UVB y la luz azul de pantallas. Su textura gel-cream de rápida absorción hidrata, calma y aporta un toque de luminosidad natural sin dejar sensación grasosa.",
+    imagen: "assets/products/prptector-solar-gel.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m039",
+    nombre: "Protector Solar Vitamina C Glow",
+    categoria: "Skincare",
+    precio: 13000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Sunscreen serum con SPF 50 PA+++ que combina protección solar de amplio espectro con la acción antioxidante de las vitaminas C y E. Su textura ligera tipo suero se absorbe rápidamente sin dejar sensación pesada ni grasa, ayudando a prevenir el envejecimiento prematuro, reparar la piel e iluminar el rostro.",
+    imagen: "assets/products/protector-serum.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m040",
+    nombre: "Protector solar Anti Acné - Con Aloe vera, Té Verde y Ácido Sálicilico",
+    categoria: "Skincare",
+    precio: 16000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Sunscreen serum con SPF 50 PA+++ que combina protección solar de amplio espectro con la acción antioxidante de las vitaminas C y E. Su textura ligera tipo suero se absorbe rápidamente sin dejar sensación pesada ni grasa, ayudando a prevenir el envejecimiento prematuro, reparar la piel e iluminar el rostro.",
+    imagen: "assets/products/protector-acne.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m041",
+    nombre: "Contorno ojos vitamina C piel luminosa y firme",
+    categoria: "Skincare",
+    precio: 6000,
+    stock: 1,
+    tallas: [],
+    descripcion:
+      "Contorno de ojos con vitamina C de textura ligera y rápida absorción que hidrata profundamente e ilumina la mirada. Combate la sequedad, ayuda a aclarar ojeras y mejora la textura de la piel opaca sin dejar sensación grasosa, ideal para preparar la zona antes del maquillaje.",
+    imagen: "assets/products/contorno-ojos.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m042",
+    nombre: "Contorno de ojos rosas AH Bioaqua reduce ojeras",
+    categoria: "Skincare",
+    precio: 6000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Contorno de ojos con ácido hialurónico (98%) y extracto de rosa que hidrata intensamente y rellena líneas de expresión. Su fórmula ligera y no grasa ayuda a desinflamar bolsas, reducir ojeras y devolverle la frescura a la mirada, siendo ideal para usar antes del maquillaje.",
+    imagen: "assets/products/contorno-rosa.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m043",
+    nombre: "Contorno Centella Asiática Bioaqua",
+    categoria: "Skincare",
+    precio: 6000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Contorno de ojos con centella asiática de textura ligera y rápida absorción que hidrata, calma y refuerza la barrera de la piel. Ayuda a desinflamar, refrescar e iluminar la mirada, suavizando la apariencia de ojeras, bolsas y líneas finas sin dejar sensación grasosa.",
+    imagen: "assets/products/contorno-asia.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m044",
+    nombre: "Sales de Baño Bioaqua Vainilla Exfoliantes y Suavizantes",
+    categoria: "Skincare",
+    precio: 18000,
+    stock: 3,
+    tallas: [],
+    descripcion:
+      "Contorno de ojos con centella asiática de textura ligera y rápida absorción que hidrata, calma y refuerza la barrera de la piel. Ayuda a desinflamar, refrescar e iluminar la mirada, suavizando la apariencia de ojeras, bolsas y líneas finas sin dejar sensación grasosa.",
+    imagen: "assets/products/sales-vainilla.jpg",
+    destacado: true,
+  },
+
+  {
+    id: "m045",
+    nombre: "Combo Vitamina C Bioaqua",
+    categoria: "Skincare",
+    precio: 50000,
+    stock: 0,
+    tallas: [],
+    descripcion:
+      "Contorno de ojos con centella asiática de textura ligera y rápida absorción que hidrata, calma y refuerza la barrera de la piel. Ayuda a desinflamar, refrescar e iluminar la mirada, suavizando la apariencia de ojeras, bolsas y líneas finas sin dejar sensación grasosa.",
+    imagen: "assets/products/combo-vitamina.jpg",
+    destacado: true,
+  },
+
 
   
 ];
