@@ -563,3 +563,41 @@ h1, h2, h3, h4 {
   .hero-art .halo-ring { animation: none; }
   * { transition-duration: .001ms !important; animation-duration: .001ms !important; }
 }
+
+
+/* ---------- Barra de búsqueda ---------- */
+.search-bar {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+.search-bar svg {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: var(--v4);
+  pointer-events: none;
+}
+.search-bar input {
+  width: 100%;
+  padding: .85em 1.2em .85em 3em;
+  border-radius: 999px;
+  border: 1.5px solid var(--v3);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.search-bar input:focus {
+  border-color: var(--v4);
+  box-shadow: 0 0 0 4px rgba(164,138,224,.25);
+}
+
+/* Resultados de búsqueda */
+.product-card { transition: opacity .25s ease, transform .25s ease; }
+.product-card.no-match { opacity: .35; }
+.product-card.match { transform: translateY(-2px); }

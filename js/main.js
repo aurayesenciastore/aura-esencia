@@ -1,7 +1,8 @@
 /* =========================================================================
    aura & ESENCIA — main.js
-   Renderiza el catálogo desde catalog.js, maneja filtros, el panel lateral
-   de producto ("subpestaña") y arma los enlaces de WhatsApp / Instagram / TikTok.
+   Renderiza el catálogo desde catalog.js, maneja filtros, búsqueda, el panel
+   lateral de producto ("subpestaña") y arma los enlaces de WhatsApp /
+   Instagram / TikTok.
 
    Si existe una versión guardada por el Panel de administración
    (localStorage), se usa esa. Si no, se usa la lista de catalog.js.
@@ -62,6 +63,25 @@
   const filtersWrap = document.getElementById("filters");
   let productos = [];
   let categoriaActiva = "Todos";
+  let terminoBusqueda = "";
+
+  // Quita tildes y pasa a minúsculas: "Algodón" también coincide con "algodon"
+  const normalizar = (s) =>
+    String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  // Puntaje de coincidencia: nombre > categoría > descripción
+  function puntaje(p, termino) {
+    if (!termino) return 0;
+    const nombre = normalizar(p.nombre);
+    const categoria = normalizar(p.categoria);
+    const descripcion = normalizar(p.descripcion);
+    let pts = 0;
+    if (nombre.startsWith(termino)) pts += 5;
+    else if (nombre.includes(termino)) pts += 3;
+    if (categoria.includes(termino)) pts += 2;
+    if (descripcion.includes(termino)) pts += 1;
+    return pts;
+  }
 
   function renderFiltros() {
     const categorias = ["Todos", ...new Set(productos.map((p) => p.categoria))];
@@ -82,8 +102,18 @@
   }
 
   function renderGrid() {
-    const lista =
-      categoriaActiva === "Todos" ? productos : productos.filter((p) => p.categoria === categoriaActiva);
+    const termino = normalizar(terminoBusqueda.trim());
+
+    let lista =
+      categoriaActiva === "Todos" ? [...productos] : productos.filter((p) => p.categoria === categoriaActiva);
+
+    // Con búsqueda: los que coinciden van primero (ordenados por relevancia)
+    if (termino) {
+      lista = lista
+        .map((p) => ({ p, pts: puntaje(p, termino) }))
+        .sort((a, b) => b.pts - a.pts)
+        .map((x) => x.p);
+    }
 
     if (!lista.length) {
       grid.innerHTML = `<p class="empty-state">Todavía no hay productos en esta categoría.</p>`;
@@ -93,8 +123,10 @@
     grid.innerHTML = lista
       .map((p) => {
         const info = stockInfo(p.stock);
+        const coincide = termino && puntaje(p, termino) > 0;
+        const clase = termino ? (coincide ? "match" : "no-match") : "";
         return `
-        <article class="product-card">
+        <article class="product-card ${clase}">
           <button class="product-media" data-id="${p.id}" aria-label="Ver detalles de ${p.nombre}">
             <span class="stock-badge ${info.clase}">${info.texto}</span>
             <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" />
@@ -114,6 +146,15 @@
 
     grid.querySelectorAll("[data-id]").forEach((el) => {
       el.addEventListener("click", () => abrirPanel(el.dataset.id));
+    });
+  }
+
+  /* ------------------------------- búsqueda ------------------------------- */
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      terminoBusqueda = searchInput.value;
+      renderGrid();
     });
   }
 
