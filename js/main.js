@@ -12,13 +12,6 @@
   const STORAGE_KEY = "auraesencia_catalogo";
   const CONTACT_KEY = "auraesencia_contacto";
 
-  // Cambia esto a "true" si quieres que el aviso emergente aparezca SIEMPRE
-  // que alguien abra la página (incluso si ya lo cerró antes en esa visita).
-  // Con "false", aparece una sola vez por sesión de navegación (se vuelve a
-  // mostrar si la persona cierra el navegador y vuelve otro día).
-  const MOSTRAR_AVISO_SIEMPRE = false;
-  const AVISO_SESSION_KEY = "auraesencia_aviso_visto";
-
   function getProductos() {
     const guardado = localStorage.getItem(STORAGE_KEY);
     if (guardado) {
@@ -195,6 +188,11 @@
           <span class="stock-line ${info.clase}">${info.texto}</span>
         </div>
 
+        <p class="ref-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          Las imágenes son de referencia: no representan todos los colores y diseños disponibles. Escríbenos por WhatsApp y te mostramos más opciones.
+        </p>
+
         <div class="panel-actions">
           <a class="btn btn-whatsapp" href="${waLink(contacto.whatsapp, mensaje)}" target="_blank" rel="noopener">
             Consultar por WhatsApp
@@ -221,36 +219,6 @@
   scrim.addEventListener("click", cerrarPanel);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarPanel(); });
 
-  /* ---------------------------- aviso emergente ---------------------------- */
-  const noticeScrim = document.getElementById("noticeScrim");
-  const noticeCloseBtn = document.getElementById("noticeCloseBtn");
-  const noticeDismissBtn = document.getElementById("noticeDismissBtn");
-
-  function cerrarAviso() {
-    noticeScrim.classList.remove("open");
-    document.body.style.overflow = "";
-    sessionStorage.setItem(AVISO_SESSION_KEY, "1");
-  }
-
-  function mostrarAvisoSiCorresponde() {
-    if (!noticeScrim) return;
-    const yaVisto = sessionStorage.getItem(AVISO_SESSION_KEY) === "1";
-    if (yaVisto && !MOSTRAR_AVISO_SIEMPRE) return;
-
-    setTimeout(() => {
-      noticeScrim.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }, 500);
-  }
-
-  if (noticeCloseBtn) noticeCloseBtn.addEventListener("click", cerrarAviso);
-  if (noticeDismissBtn) noticeDismissBtn.addEventListener("click", cerrarAviso);
-  if (noticeScrim) {
-    noticeScrim.addEventListener("click", (e) => {
-      if (e.target === noticeScrim) cerrarAviso();
-    });
-  }
-
   /* ------------------------------- menú móvil ------------------------------- */
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");
@@ -266,7 +234,6 @@
     renderFiltros();
     renderGrid();
     document.getElementById("year").textContent = new Date().getFullYear();
-    mostrarAvisoSiCorresponde();
   }
 
   document.addEventListener("DOMContentLoaded", init);
