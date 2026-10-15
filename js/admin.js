@@ -106,6 +106,7 @@
   const fId = document.getElementById("fId");
   const fNombre = document.getElementById("fNombre");
   const fCategoria = document.getElementById("fCategoria");
+  const fSubcategoria = document.getElementById("fSubcategoria");
   const fPrecio = document.getElementById("fPrecio");
   const fTallas = document.getElementById("fTallas");
   const fStock = document.getElementById("fStock");
@@ -128,6 +129,7 @@
       fId.value = p.id;
       fNombre.value = p.nombre;
       fCategoria.value = p.categoria;
+      fSubcategoria.value = p.subcategoria || "";
       fPrecio.value = p.precio;
       fTallas.value = (p.tallas || []).join(", ");
       fStock.value = p.stock;
@@ -192,6 +194,8 @@
       imagen,
       destacado: fDestacado.checked,
     };
+    const sub = fSubcategoria.value.trim();
+    if (sub) data.subcategoria = sub;
 
     if (fId.value) {
       productos = productos.map((p) => (String(p.id) === String(fId.value) ? data : p));

@@ -135,6 +135,16 @@
         <input type="text" id="fCategoria" placeholder="Ej: Conjuntos, Pijamas, Bralettes..." required />
       </label>
 
+      <label>Subcategoría (opcional)
+        <input type="text" id="fSubcategoria" list="subcatList" placeholder="Ej: Shorts, Capris, Cuidado facial..." />
+        <span class="field-hint">Si la dejas vacía, se asigna sola según el nombre del producto.</span>
+        <datalist id="subcatList">
+          <option value="Pantalones"></option><option value="Shorts"></option><option value="Capris"></option>
+          <option value="Batolas"></option><option value="Enterizos"></option><option value="Niños y niñas"></option>
+          <option value="Cuidado facial"></option><option value="Cuidado corporal"></option><option value="Cuidado capilar"></option>
+        </datalist>
+      </label>
+
       <label>Precio (COP)
         <input type="number" id="fPrecio" min="0" step="1000" required />
       </label>

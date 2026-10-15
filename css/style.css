@@ -571,3 +571,113 @@ h1, h2, h3, h4 {
 .product-card { transition: opacity .25s ease, transform .25s ease; }
 .product-card.no-match { opacity: .35; }
 .product-card.match { transform: translateY(-2px); }
+/* =====================================================================
+   CATÁLOGO POR SECCIONES — sliders horizontales con título y línea
+   ===================================================================== */
+.catalog-grid.catalog-sections { display: block; }
+
+.cat-group + .cat-group { margin-top: 56px; }
+
+/* Título de categoría (solo en la pestaña "Todos") */
+.group-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 26px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  font-weight: 600;
+  color: var(--v5);
+}
+.group-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--v3);
+  opacity: .55;
+}
+
+/* Título de cada subcategoría + línea */
+.cat-section + .cat-section { margin-top: 34px; }
+
+.sub-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.sub-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+  font-weight: 600;
+  color: var(--v5);
+  white-space: nowrap;
+}
+.sub-line {
+  flex: 1;
+  height: 1px;
+  background: var(--v3);
+  opacity: .5;
+}
+.sub-count {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--v4);
+  white-space: nowrap;
+}
+
+/* Slider táctil */
+.slider { position: relative; }
+
+.slider-track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  padding: 14px 4px 26px;   /* espacio para la sombra y el efecto hover */
+  scrollbar-width: none;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track:focus-visible { outline: 2px solid var(--v4); outline-offset: 2px; border-radius: 12px; }
+
+.slider-track > .product-card {
+  flex: 0 0 auto;
+  width: clamp(160px, 44vw, 250px);
+  scroll-snap-align: start;
+}
+
+/* Flechas */
+.slider-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid var(--v3);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--v5);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.slider-arrow[hidden] { display: none; }
+.slider-arrow svg { width: 26px; height: 26px; fill: currentColor; }
+.slider-arrow:hover { background: var(--v5); border-color: var(--v5); color: #fff; transform: translateY(-50%) scale(1.07); }
+.slider-arrow.prev { left: -8px; }
+.slider-arrow.next { right: -8px; }
+
+@media (max-width: 600px) {
+  .slider-arrow { width: 36px; height: 36px; }
+  .slider-arrow svg { width: 22px; height: 22px; }
+  .slider-arrow.prev { left: -4px; }
+  .slider-arrow.next { right: -4px; }
+}

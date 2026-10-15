@@ -94,31 +94,41 @@
     });
   }
 
-  function renderGrid() {
-    const termino = normalizar(terminoBusqueda.trim());
+  /* ------------------- subcategorías (sliders por sección) -------------------
+     Cada producto puede tener un campo opcional  subcategoria: "Shorts"  en
+     catalog.js. Si no lo tiene, se detecta solo por el nombre del producto.
+     El orden en que aparecen las secciones se define aquí abajo.
+  ---------------------------------------------------------------------------- */
+  const ORDEN_SUBCATEGORIAS = {
+    Pijamas: ["Pantalones", "Shorts", "Capris", "Batolas", "Enterizos", "Niños y niñas"],
+    Skincare: ["Cuidado facial", "Cuidado corporal", "Cuidado capilar"],
+  };
 
-    let lista =
-      categoriaActiva === "Todos" ? [...productos] : productos.filter((p) => p.categoria === categoriaActiva);
-
-    // Con búsqueda: los que coinciden van primero (ordenados por relevancia)
-    if (termino) {
-      lista = lista
-        .map((p) => ({ p, pts: puntaje(p, termino) }))
-        .sort((a, b) => b.pts - a.pts)
-        .map((x) => x.p);
+  function subcategoriaDe(p) {
+    if (p.subcategoria && String(p.subcategoria).trim()) return String(p.subcategoria).trim();
+    const n = normalizar(p.nombre);
+    if (p.categoria === "Pijamas") {
+      if (/ninos|ninas/.test(n)) return "Niños y niñas";
+      if (/^capri/.test(n)) return "Capris";
+      if (/enterizo/.test(n)) return "Enterizos";
+      if (/batola/.test(n)) return "Batolas";
+      if (/^pantalon/.test(n)) return "Pantalones";
+      if (/short/.test(n)) return "Shorts";
+      return "Otros";
     }
-
-    if (!lista.length) {
-      grid.innerHTML = `<p class="empty-state">Todavía no hay productos en esta categoría.</p>`;
-      return;
+    if (p.categoria === "Skincare") {
+      if (/antifrizz|shampoo|cabello|hair|capilar/.test(n)) return "Cuidado capilar";
+      if (/corporal|bano|ducha|manos|shimmer|cuerpo/.test(n)) return "Cuidado corporal";
+      return "Cuidado facial";
     }
+    return p.categoria; // otras categorías: una sola sección con su nombre
+  }
 
-    grid.innerHTML = lista
-      .map((p) => {
-        const info = stockInfo(p.stock);
-        const coincide = termino && puntaje(p, termino) > 0;
-        const clase = termino ? (coincide ? "match" : "no-match") : "";
-        return `
+  function tarjetaHTML(p, termino) {
+    const info = stockInfo(p.stock);
+    const coincide = termino && puntaje(p, termino) > 0;
+    const clase = termino ? (coincide ? "match" : "no-match") : "";
+    return `
         <article class="product-card ${clase}">
           <button class="product-media" data-id="${p.id}" aria-label="Ver detalles de ${p.nombre}">
             <span class="stock-badge ${info.clase}">${info.texto}</span>
@@ -134,12 +144,111 @@
             <button class="btn btn-ghost" data-id="${p.id}" data-open>Ver detalles</button>
           </div>
         </article>`;
-      })
-      .join("");
+  }
+
+  const FLECHA_IZQ = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>`;
+  const FLECHA_DER = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>`;
+
+  function seccionHTML(titulo, lista, termino) {
+    return `
+      <section class="cat-section">
+        <div class="sub-head">
+          <h3 class="sub-title">${titulo}</h3>
+          <span class="sub-line" aria-hidden="true"></span>
+          <span class="sub-count">${lista.length}</span>
+        </div>
+        <div class="slider">
+          <button class="slider-arrow prev" type="button" aria-label="Ver anteriores en ${titulo}" hidden>${FLECHA_IZQ}</button>
+          <div class="slider-track" tabindex="0">
+            ${lista.map((p) => tarjetaHTML(p, termino)).join("")}
+          </div>
+          <button class="slider-arrow next" type="button" aria-label="Ver más en ${titulo}" hidden>${FLECHA_DER}</button>
+        </div>
+      </section>`;
+  }
+
+  // Muestra/oculta las flechas según se pueda desplazar a cada lado
+  function actualizarFlechas(slider) {
+    const track = slider.querySelector(".slider-track");
+    const prev = slider.querySelector(".slider-arrow.prev");
+    const next = slider.querySelector(".slider-arrow.next");
+    const max = track.scrollWidth - track.clientWidth;
+    prev.hidden = track.scrollLeft <= 4;
+    next.hidden = max <= 4 || track.scrollLeft >= max - 4;
+  }
+
+  function activarSliders() {
+    grid.querySelectorAll(".slider").forEach((slider) => {
+      const track = slider.querySelector(".slider-track");
+      const mover = (dir) =>
+        track.scrollBy({ left: dir * Math.max(track.clientWidth * 0.85, 200), behavior: "smooth" });
+      slider.querySelector(".slider-arrow.prev").addEventListener("click", () => mover(-1));
+      slider.querySelector(".slider-arrow.next").addEventListener("click", () => mover(1));
+      track.addEventListener("scroll", () => actualizarFlechas(slider), { passive: true });
+      actualizarFlechas(slider);
+    });
+  }
+
+  window.addEventListener("resize", () => {
+    grid.querySelectorAll(".slider").forEach(actualizarFlechas);
+  });
+
+  function renderGrid() {
+    const termino = normalizar(terminoBusqueda.trim());
+
+    let lista =
+      categoriaActiva === "Todos" ? [...productos] : productos.filter((p) => p.categoria === categoriaActiva);
+
+    if (!lista.length) {
+      grid.classList.remove("catalog-sections");
+      grid.innerHTML = `<p class="empty-state">Todavía no hay productos en esta categoría.</p>`;
+      return;
+    }
+
+    // Agrupa: categoría → subcategoría → productos
+    const porCategoria = new Map();
+    lista.forEach((p) => {
+      if (!porCategoria.has(p.categoria)) porCategoria.set(p.categoria, new Map());
+      const subs = porCategoria.get(p.categoria);
+      const sub = subcategoriaDe(p);
+      if (!subs.has(sub)) subs.set(sub, []);
+      subs.get(sub).push(p);
+    });
+
+    // Con búsqueda: dentro de cada slider los que coinciden van primero
+    const ordenar = (arr) =>
+      termino
+        ? arr
+            .map((p) => ({ p, pts: puntaje(p, termino) }))
+            .sort((a, b) => b.pts - a.pts)
+            .map((x) => x.p)
+        : arr;
+    const mejor = (arr) => (termino ? Math.max(...arr.map((p) => puntaje(p, termino))) : 0);
+
+    let html = "";
+
+    porCategoria.forEach((subs, categoria) => {
+      const orden = ORDEN_SUBCATEGORIAS[categoria] || [];
+      let nombres = [...subs.keys()].sort((a, b) => {
+        const ia = orden.indexOf(a), ib = orden.indexOf(b);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+      });
+      // Con búsqueda, las secciones con mejores coincidencias suben
+      if (termino) nombres = nombres.sort((a, b) => mejor(subs.get(b)) - mejor(subs.get(a)));
+
+      const secciones = nombres.map((n) => seccionHTML(n, ordenar(subs.get(n)), termino)).join("");
+      html += `<div class="cat-group">
+        ${secciones}
+      </div>`;
+    });
+
+    grid.classList.add("catalog-sections");
+    grid.innerHTML = html;
 
     grid.querySelectorAll("[data-id]").forEach((el) => {
       el.addEventListener("click", () => abrirPanel(el.dataset.id));
     });
+    activarSliders();
   }
 
   /* ------------------------------- búsqueda ------------------------------- */
