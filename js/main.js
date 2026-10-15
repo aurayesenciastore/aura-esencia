@@ -62,18 +62,25 @@
   const normalizar = (s) =>
     String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-  // Puntaje de coincidencia: nombre > categoría > descripción
+  // Puntaje de coincidencia con palabras clave: todas las palabras deben aparecer
+  // en el nombre, la categoría, la subcategoría o la descripción del producto.
   function puntaje(p, termino) {
     if (!termino) return 0;
+    const palabras = termino.split(/\s+/).filter(Boolean);
     const nombre = normalizar(p.nombre);
-    const categoria = normalizar(p.categoria);
+    const categoria = normalizar(p.categoria + " " + subcategoriaDe(p));
     const descripcion = normalizar(p.descripcion);
-    let pts = 0;
-    if (nombre.startsWith(termino)) pts += 5;
-    else if (nombre.includes(termino)) pts += 3;
-    if (categoria.includes(termino)) pts += 2;
-    if (descripcion.includes(termino)) pts += 1;
-    return pts;
+    let total = 0;
+    for (const w of palabras) {
+      let pts = 0;
+      if (nombre.startsWith(w)) pts += 5;
+      else if (nombre.includes(w)) pts += 3;
+      if (categoria.includes(w)) pts += 2;
+      if (descripcion.includes(w)) pts += 1;
+      if (pts === 0) return 0;
+      total += pts;
+    }
+    return total;
   }
 
   function renderFiltros() {
@@ -117,7 +124,8 @@
       return "Otros";
     }
     if (p.categoria === "Skincare") {
-      if (/antifrizz|shampoo|cabello|hair|capilar/.test(n)) return "Cuidado capilar";
+      const d = normalizar(p.descripcion);
+      if (/antifrizz|shampoo|cabello|hair|capilar|crecimiento/.test(n) || /cabello|cuero cabelludo|shampoo/.test(d)) return "Cuidado capilar";
       if (/corporal|bano|ducha|manos|shimmer|cuerpo/.test(n)) return "Cuidado corporal";
       return "Cuidado facial";
     }
@@ -126,8 +134,7 @@
 
   function tarjetaHTML(p, termino) {
     const info = stockInfo(p.stock);
-    const coincide = termino && puntaje(p, termino) > 0;
-    const clase = termino ? (coincide ? "match" : "no-match") : "";
+    const clase = "";
     return `
         <article class="product-card ${clase}">
           <button class="product-media" data-id="${p.id}" aria-label="Ver detalles de ${p.nombre}">
@@ -199,9 +206,21 @@
     let lista =
       categoriaActiva === "Todos" ? [...productos] : productos.filter((p) => p.categoria === categoriaActiva);
 
+    if (termino) lista = lista.filter((p) => puntaje(p, termino) > 0);
+
+    const resumen = termino
+      ? `<div class="search-summary">
+           <span>Resultados para “${escapar(terminoBusqueda.trim())}” · ${lista.length} producto${lista.length === 1 ? "" : "s"}</span>
+           <button type="button" class="search-summary-clear">Quitar búsqueda</button>
+         </div>`
+      : "";
+
     if (!lista.length) {
       grid.classList.remove("catalog-sections");
-      grid.innerHTML = `<p class="empty-state">Todavía no hay productos en esta categoría.</p>`;
+      grid.innerHTML = termino
+        ? `${resumen}<p class="empty-state">No encontramos productos con esas palabras. Prueba con otra, por ejemplo “short”, “facial” o “kit”.</p>`
+        : `<p class="empty-state">Todavía no hay productos en esta categoría.</p>`;
+      enlazarResumen();
       return;
     }
 
@@ -243,7 +262,8 @@
     });
 
     grid.classList.add("catalog-sections");
-    grid.innerHTML = html;
+    grid.innerHTML = resumen + html;
+    enlazarResumen();
 
     grid.querySelectorAll("[data-id]").forEach((el) => {
       el.addEventListener("click", () => abrirPanel(el.dataset.id));
@@ -251,13 +271,118 @@
     activarSliders();
   }
 
-  /* ------------------------------- búsqueda ------------------------------- */
+  /* ------------------------------- búsqueda -------------------------------
+     Al escribir aparece una lista con sugerencias (foto, nombre y precio).
+     Con Enter o "Ver todos los resultados" el catálogo muestra solo los
+     productos que coinciden con las palabras clave.
+  ---------------------------------------------------------------------------- */
+  const escapar = (t) =>
+    String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  function enlazarResumen() {
+    const btn = grid.querySelector(".search-summary-clear");
+    if (btn) btn.addEventListener("click", limpiarBusqueda);
+  }
+
   const searchInput = document.getElementById("searchInput");
+  let sugerencias = null;
+  let botonBorrar = null;
+
+  function buscar(texto) {
+    const termino = normalizar(texto.trim());
+    if (!termino) return [];
+    return productos
+      .map((p) => ({ p, pts: puntaje(p, termino) }))
+      .filter((x) => x.pts > 0)
+      .sort((a, b) => b.pts - a.pts)
+      .map((x) => x.p);
+  }
+
+  function cerrarSugerencias() {
+    if (sugerencias) sugerencias.hidden = true;
+  }
+
+  function pintarSugerencias() {
+    const texto = searchInput.value;
+    botonBorrar.hidden = !texto;
+    if (!texto.trim()) { cerrarSugerencias(); return; }
+
+    const encontrados = buscar(texto);
+    if (!encontrados.length) {
+      sugerencias.innerHTML = `<div class="sr-empty">No encontramos “${escapar(texto.trim())}”. Prueba con otra palabra.</div>`;
+    } else {
+      sugerencias.innerHTML =
+        encontrados
+          .slice(0, 5)
+          .map(
+            (p) => `
+          <button type="button" class="sr-item" data-id="${p.id}">
+            <img src="${p.imagen}" alt="" loading="lazy" />
+            <span class="sr-name">${escapar(p.nombre)}</span>
+            <span class="sr-price">${money(p.precio)}</span>
+          </button>`
+          )
+          .join("") +
+        `<button type="button" class="sr-all">Ver todos los resultados (${encontrados.length})</button>`;
+    }
+    sugerencias.hidden = false;
+  }
+
+  function aplicarBusqueda() {
+    terminoBusqueda = searchInput.value.trim();
+    cerrarSugerencias();
+    renderGrid();
+    if (terminoBusqueda) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function limpiarBusqueda() {
+    searchInput.value = "";
+    terminoBusqueda = "";
+    botonBorrar.hidden = true;
+    cerrarSugerencias();
+    renderGrid();
+  }
+
   if (searchInput) {
+    const barra = searchInput.closest(".search-bar");
+
+    botonBorrar = document.createElement("button");
+    botonBorrar.type = "button";
+    botonBorrar.className = "search-clear";
+    botonBorrar.setAttribute("aria-label", "Borrar búsqueda");
+    botonBorrar.textContent = "×";
+    botonBorrar.hidden = true;
+    barra.appendChild(botonBorrar);
+
+    sugerencias = document.createElement("div");
+    sugerencias.className = "search-results";
+    sugerencias.hidden = true;
+    barra.appendChild(sugerencias);
+
     searchInput.addEventListener("input", () => {
-      terminoBusqueda = searchInput.value;
-      renderGrid();
+      // Si borran todo el texto, se vuelve al catálogo completo
+      if (!searchInput.value.trim() && terminoBusqueda) {
+        terminoBusqueda = "";
+        renderGrid();
+      }
+      pintarSugerencias();
     });
+    searchInput.addEventListener("focus", pintarSugerencias);
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); aplicarBusqueda(); }
+      if (e.key === "Escape") cerrarSugerencias();
+    });
+
+    botonBorrar.addEventListener("click", () => { limpiarBusqueda(); searchInput.focus(); });
+
+    sugerencias.addEventListener("click", (e) => {
+      const item = e.target.closest(".sr-item");
+      if (item) { cerrarSugerencias(); abrirPanel(item.dataset.id); return; }
+      if (e.target.closest(".sr-all")) aplicarBusqueda();
+    });
+
+    // Cierra la lista al tocar fuera de la barra
+    document.addEventListener("click", (e) => { if (!barra.contains(e.target)) cerrarSugerencias(); });
   }
 
   /* ------------------------ panel lateral (subpestaña) ------------------------ */
