@@ -676,8 +676,23 @@ h1, h2, h3, h4 {
 .slider-arrow.next { right: -8px; }
 
 @media (max-width: 600px) {
+  /* Celular: un solo producto a la vez (se asoma un poquito el siguiente) */
+  #catalogo .container { padding: 0 10px; }   /* menos margen a los lados */
+  .slider-track { scroll-snap-type: x mandatory; padding-left: 2px; padding-right: 2px; }
+  .slider-track > .product-card {
+    width: 90%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
   .slider-arrow { width: 36px; height: 36px; }
   .slider-arrow svg { width: 22px; height: 22px; }
   .slider-arrow.prev { left: -4px; }
   .slider-arrow.next { right: -4px; }
+}
+
+/* Computador: catálogo más ancho y tarjetas más grandes */
+@media (min-width: 901px) {
+  #catalogo .container { max-width: 1500px; padding: 0 36px; }
+  .slider-track { gap: 22px; }
+  .slider-track > .product-card { width: clamp(270px, 20vw, 320px); }
 }

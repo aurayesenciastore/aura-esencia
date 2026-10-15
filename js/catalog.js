@@ -747,7 +747,7 @@ const CATALOGO = [
 
   {
     id: "m022",
-    nombre: "Kit Crecimiento Shampoo (200ml) + Hair Oiling Jengibre (30 gr)",
+    nombre: "Kit Crecimiento Shampoo Disaar",
     categoria: "Skincare",
     precio: 40000,
     stock: 1,
