@@ -747,7 +747,7 @@ const CATALOGO = [
 
   {
     id: "m022",
-    nombre: "Kit Crecimiento Shampoo Disaar",
+    nombre: "Kit Crecimiento Disaar",
     categoria: "Skincare",
     precio: 40000,
     stock: 1,
